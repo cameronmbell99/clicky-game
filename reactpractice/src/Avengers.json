@@ -1,0 +1,74 @@
+[
+    {
+        "clicked": "false",
+         "id": 1,
+        "image":"assets/Black-Panther.jpg",
+        "name": "Black Panther"
+    },
+    {
+        "clicked": "false",
+         "id": 2,
+        "image":"../../../public/assets/Black-Widow.jpg",
+        "name": "Black Widow"
+    },
+    {
+        "clicked": "false",
+         "id": 3,
+        "image":"../../../public/assets/Captain-America.jpg",
+        "name": "Captain America"
+    },
+    {
+        "clicked": "false",
+         "id": 4,
+        "image":"../../../public/assets/Captain-America(EndGame).jpg",
+        "name": "Captain America Beard"
+    },
+    {
+        "clicked": "false",
+         "id": 5,
+        "image":"../../../public/assets/Captain-Marvel.jpg",
+        "name": "Captain Marvel"
+    },
+    {
+        "clicked": "false",
+         "id": 6,
+        "image":"../../../public/assets/Dr-Strange.jpg",
+        "name": "Dr. Strange"
+    },
+    {
+        "clicked": "false",
+         "id": 7,
+        "image":"../../../public/assets/Drax.jpg",
+        "name": "Drax"
+    },
+    {
+        "clicked": "false",
+         "id": 8,
+        "image":"../../../public/assets/Falcon.jpg",
+        "name": "Falcon"
+    },
+    {
+        "clicked": "false",
+         "id": 9,
+        "image":"../../../public/assets/Hulk.jpg",
+        "name": "Hulk"
+    },
+    {
+        "clicked": "false",
+         "id": 10,
+        "image":"../../../public/assets/Iron-Man.jpg",
+        "name": "Iron Man"
+    },
+    {
+        "clicked": "false",
+         "id": 11,
+        "image":"../../../public/assets/Spider-man.jpg",
+        "name": "Spider-man"
+    },
+    {
+        "clicked": "false",
+         "id": 12,
+        "image":"../../../public/assets/Thor.jpg",
+        "name": "Thor"
+    }
+]
