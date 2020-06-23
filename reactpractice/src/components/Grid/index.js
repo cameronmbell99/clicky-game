@@ -1,19 +1,22 @@
 import React, {Component} from "react";
-import Avengers from "../../Avengers.json";
+import Avengersimgs from "../../Avengers.json";
 import Card from "../Card";
 import Nav from "../Nav";
 
 
+
 class Grid extends Component {
     state = {
-        Avengers: Avengers,
+        Avengers: Avengersimgs,
         score: 0
     }
+
+    
 
     resetGame = () => {
         this.setState({
             score: 0,
-            Avengers: Avengers
+            Avengers: Avengersimgs
         })      
     }
 
@@ -64,20 +67,22 @@ class Grid extends Component {
         return(
             <div>
                 <Nav score={this.state.score}/>
-                <div className="gridWrapper">
-                    <div className="grid">
-                    {this.state.Avengers.map(({id, name, image}) => {
-                            return (<Card 
+                  <div className="grid">
+                  {this.state.Avengers.map(({id, name, image}) => {
+                          return (
+                        <div class="col-lg-3">
+                          <Card 
                             name={name}
                             id={id}
                             key={id} 
                             handleClick={this.handleClick}
                             src={image} 
                             alt={name}  
-                        />)
-                        })}
-                    </div>
-                </div>
+                          />
+                        </div>
+                      )
+                      })}
+                  </div>
             </div> 
         );
     }

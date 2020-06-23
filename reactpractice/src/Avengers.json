@@ -2,7 +2,7 @@
     {
         "clicked": "false",
          "id": 1,
-        "image":"assets/Black-Panther.jpg",
+        "image":"../../../public/assets/Black-Panther.png",
         "name": "Black Panther"
     },
     {
