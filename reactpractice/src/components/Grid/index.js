@@ -1,91 +1,28 @@
-import React, {Component} from "react";
-import Avengersimgs from "../../Avengers.json";
-import Card from "../Card";
-import Nav from "../Nav";
+import React from "react";
 
+// Exporting the Container, Row, and Col components from this file
 
+// This Container component allows us to use a bootstrap container without worrying about class names
+export function Container({ fluid, children }) {
+  return <div className={`container${fluid ? "-fluid" : ""}`}>{children}</div>;
+}
 
-class Grid extends Component {
-    state = {
-        Avengers: Avengersimgs,
-        score: 0
-    }
+// This Row component lets us use a bootstrap row without having to think about class names
+export function Row({ fluid, children }) {
+  return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
+}
 
-    
-
-    resetGame = () => {
-        this.setState({
-            score: 0,
-            Avengers: Avengersimgs
-        })      
-    }
-
-    handleCorrect = newAvengers => {
-        this.setState({
-            Avengers: this.shuffleArray(newAvengers), 
-            score: this.state.score +1,
-        });
-        
-        if (this.state.score === 11) {
-            this.resetGame();
-            console.log("You won!");
-        }
-
-    };
-
-    handleWrong = () => {
-        this.resetGame();
-    };
-
-    handleClick = name => {
-        let guessedCorrect = false;
-        const newAvengers = this.state.Avengers.map(Avenger => {
-           const newPic = {...Avenger};
-           if (newPic.name === name) {
-               if(!newPic.clicked){
-                   console.log("Already guessed------------");
-                   newPic.clicked = true;
-                   guessedCorrect = true;
-               }
-               
-           }
-           return newPic;
-       })       
-       console.log("GUESSED CORRECT: ", guessedCorrect)
-       guessedCorrect ? this.handleCorrect(newAvengers) : this.handleWrong(newAvengers)
-    };
-
-    shuffleArray = Avengers => {
-        for (let i = Avengers.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [Avengers[i], Avengers[j]] = [Avengers[j], Avengers[i]];
-        }
-        return (Avengers);
-    };
-
-    render() {
-        return(
-            <div>
-                <Nav score={this.state.score}/>
-                  <div className="grid">
-                  {this.state.Avengers.map(({id, name, image}) => {
-                          return (
-                        <div class="col-lg-3">
-                          <Card 
-                            name={name}
-                            id={id}
-                            key={id} 
-                            handleClick={this.handleClick}
-                            src={image} 
-                            alt={name}  
-                          />
-                        </div>
-                      )
-                      })}
-                  </div>
-            </div> 
-        );
-    }
-};
-
-export default Grid;
+// This Col component lets us size bootstrap columns with less syntax
+// e.g. <Col size="md-12"> instead of <div className="col-md-12">
+export function Col({ size, children }) {
+  return (
+    <div
+      className={size
+        .split(" ")
+        .map(size => "col-" + size)
+        .join(" ")}
+    >
+      {children}
+    </div>
+  );
+}

@@ -1,14 +1,11 @@
 import React from "react";
 
-function Card({ handleClick, id, name, image }) {
+function Card(props) {
   return (
-    <div class="card" style={{width: '18rem', backgroundImage:`url(${image})`}}>
+    <div onClick={() => props.handleClick(props.id)} class="card">
         <img class="card-img-top" 
-            // src={image}
-            alt={name}
-            onClick={() => handleClick(id)}>
-        </img>
-      
+            alt={props.name}
+            src={props.image}/>
     </div>
   );
 }
